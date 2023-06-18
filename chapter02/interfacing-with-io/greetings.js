@@ -1,0 +1,16 @@
+process.stdin.on("data", (data) => {
+	// processing on each data event
+	const name = data.toString().trim().toUpperCase();
+	if (name != "") {
+		process.stdout.write(`Hello,
+		${name}!`);
+	} else {
+		process.stderr.write("Input was empty");
+	}
+});
+
+function handle(signal) {
+	console.log(`Received ${signal}`)
+}
+
+process.on('SIGINT', handle);
