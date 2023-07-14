@@ -1,7 +1,7 @@
-const { HttpServer } = require('./index')
+const myExpress = require('./lib')
 
 const PORT = 3435
-const app = new HttpServer()
+const app = myExpress()
 
 app.get("/", function (req, res) {
   res.end("Welcome")
